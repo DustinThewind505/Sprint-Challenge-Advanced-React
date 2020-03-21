@@ -13,18 +13,19 @@ it('renders without crashing', () => {
 
 test('renders LIST', async () => {
   // Arrange
-  const { getByText } = render(<ListContainer />, h1);
-  // Act
-  const greeting = getByText(/list container/i);
-  // Assert
-  expect(greeting).toBeInTheDocument();
+  const { getByText } = render(<ListContainer />);
+  getByText(/list container/i);
 });
 
 test('renders word "list"', () => {
   const { getByText } = render(<App />);
-  const header = getByText(/list/i);
-  expect(header).toBeInTheDocument();
+  getByText(/list/i);
 });
 
+test('NEW TEST', () => {
+  const { getByText } = render(<App />);
+  getByText(/oi!/i);
+
+})
 
 
