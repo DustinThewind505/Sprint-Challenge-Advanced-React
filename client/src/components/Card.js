@@ -4,7 +4,7 @@ const Card = props => {
 
     return(
         <Fragment>
-            <h3>Ello Poppet Card</h3>
+            <h3 data-testid="Card">Card</h3>
             {props.Data.map((element, index) => 
                 <div key={index}>
                 <h4>{element.name}</h4>

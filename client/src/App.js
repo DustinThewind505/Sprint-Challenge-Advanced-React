@@ -15,7 +15,7 @@ const App = () => {
 
 
   return (
-    <div className="App">
+    <div className="App" data-testid="App">
       <header className="App-header">
         <div className="dark-mode__toggle">
           Oi!
