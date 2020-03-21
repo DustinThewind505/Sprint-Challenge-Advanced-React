@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import ListContainer from './components/ListContainer';
 
@@ -18,10 +18,11 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <div className="dark-mode__toggle">
+          Oi!
           <button
             onClick={toggleMode}
             className={darkMode ? 'toggle toggled' : 'toggle'}
-          >Dark Mode</button>
+          >Don't push this button or you will delete everything!</button>
         </div>
         <ListContainer />
       </header>

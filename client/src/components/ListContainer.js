@@ -24,10 +24,7 @@ class ListContainer extends React.Component {
         console.log(this.state)
         return (
             <Fragment>
-                <h1>Ello Poppet</h1>
-                {this.state.Data.map(element =>
-                    element.name
-                )}
+                <h1>List Container</h1>               
                 <Card Data={this.state.Data} />
             </Fragment>
         )
