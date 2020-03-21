@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Card from './Card';
 
+
 class ListContainer extends React.Component {
 
     state = {
@@ -9,13 +10,13 @@ class ListContainer extends React.Component {
 
     componentDidMount() {
         fetch("http://localhost:5000/api/players")
-        .then(response => response.json())
-        .then(response => {
-            this.setState({
-                Data: response
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    Data: response
+                })
             })
-        })
-        .catch(err => console.error(err))
+            .catch(err => console.error(err))
     }
 
 
@@ -24,10 +25,10 @@ class ListContainer extends React.Component {
         return (
             <Fragment>
                 <h1>Ello Poppet</h1>
-        {this.state.Data.map(element => 
-            element.name
-        )}
-                <Card Data={this.state.Data}/>
+                {this.state.Data.map(element =>
+                    element.name
+                )}
+                <Card Data={this.state.Data} />
             </Fragment>
         )
     }

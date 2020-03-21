@@ -31,3 +31,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* ========== My Styles ========== */
+.dark-mode {
+  color: #fff;
+  background-color: #313843;
+}

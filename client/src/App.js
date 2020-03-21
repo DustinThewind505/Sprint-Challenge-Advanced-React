@@ -1,19 +1,33 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import  ListContainer from './components/ListContainer';
+import ListContainer from './components/ListContainer';
 
-class App extends React.Component {
+import { useDarkMode } from './hooks/useDarkMode';
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <ListContainer />
-        </header>
-      </div>
-    );
-  }
+const App = () => {
+
+  const [darkMode, setDarkMode] = useDarkMode('darkMode', false);;
+  const toggleMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
+
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <div className="dark-mode__toggle">
+          <button
+            onClick={toggleMode}
+            className={darkMode ? 'toggle toggled' : 'toggle'}
+          >Dark Mode</button>
+        </div>
+        <ListContainer />
+      </header>
+    </div>
+  );
 }
+
 
 export default App;
