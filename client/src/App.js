@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import ListContainer from './components/ListContainer';
+
+import { useDarkMode } from './hooks/useDarkMode';
+
+const App = () => {
+
+  const [darkMode, setDarkMode] = useDarkMode('darkMode', false);;
+  const toggleMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
+
+
   return (
-    <div className="App">
+    <div className="App" data-testid="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="dark-mode__toggle">
+          Oi!
+          <button
+            onClick={toggleMode}
+            className={darkMode ? 'toggle toggled' : 'toggle'}
+          >Don't push this button or you will delete everything!</button>
+        </div>
+        <ListContainer />
       </header>
     </div>
   );
 }
+
 
 export default App;
